@@ -1,0 +1,94 @@
+.pagina-principale {
+    text-align: center;
+}
+
+.hero {
+    background-image: url('/assets/icons/sfondo-report-ibm.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 138px 20px;
+    color: #111a54;
+}
+
+.hero h1 {
+    font-size: 2.0rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+.contenuto h2 {
+    margin-top: 40px;
+    font-size: 1.8rem;
+}
+
+.contenuto ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contenuto li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.button {
+    height: 40px;
+    width: 120px;
+    border-radius: 6%;
+    background-color: rgb(4, 4, 171);
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.1s ease
+}
+
+.button:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+}
+
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    font-family: sans-serif;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    height: 35px;
+    width: 650px;
+    margin-bottom: 70px;
+    border-radius: 10px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.search-input::placeholder {
+    color: #aaa;
+}
+
+.search-bar img {
+    margin-left: 10px;
+    cursor: pointer;
+}

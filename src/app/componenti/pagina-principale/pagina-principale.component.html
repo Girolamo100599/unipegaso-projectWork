@@ -1,0 +1,45 @@
+<div class="container pagina-principale">
+    <div class="row hero" style="text-align: start;">
+        <div class="col-12" style="margin-left: 300px;">
+            <!-- Barra di Ricerca -->
+            <div class="search-bar" style="position: relative;">
+                <input type="text" class="search-input" placeholder="Cerca..." [(ngModel)]="searchTerm"
+                    (input)="filterResults()" />
+                <img style="margin-top: 5px;" src="assets/icons/ricerca.svg" alt="Icona di ricerca">
+
+                <!-- Dropdown con i risultati -->
+                <ul class="dropdown-menu" *ngIf="filteredItems.length > 0 && searchTerm.length > 0"
+                    style="position: absolute; top: 100%; left: 0; background: white; border: 1px solid #ccc; width: 100%; z-index: 1000; list-style: none; padding: 0; margin: 0;">
+                    <li *ngFor="let result of filteredItems" (click)="selectItem(result)"
+                        style="padding: 10px; cursor: pointer;" (mouseover)="hoverItem = result"
+                        [style.background]="hoverItem === result ? '#f0f0f0' : 'white'">
+                        {{ result }}
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Titolo della Pagina -->
+            <h1 style="width: 500px;" class="text-start">Benvenuti nel Report di Sostenibilità IBM</h1>
+            <p class="text-start">
+                Scopri di più sul nostro impegno per un futuro sostenibile.
+            </p>
+        </div>
+
+        <!-- Le Nostre Aree di Interesse -->
+        <div class="row contenuto mt-5">
+            <div class="col-md-6 text-start" style="margin-left: 300px;">
+                <h2>Le Nostre Aree di Interesse</h2>
+                <ul>
+                    <li>Sostenibilità ambientale</li>
+                    <li>Innovazione tecnologica responsabile</li>
+                    <li>Diversità e inclusione</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Pulsante Scarica PDF -->
+        <div class="button" style="margin-left: 300px; margin-top: 20px;">
+            <div (click)="downloadDocument()" class="nav-link" style="padding: 8%;">Scarica PDF</div>
+        </div>
+    </div>
+</div>

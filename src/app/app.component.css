@@ -1,0 +1,5 @@
+.container {
+    max-width: var(--container-width);
+    /*padding: 0 30px;*/
+    text-align: center;
+}
