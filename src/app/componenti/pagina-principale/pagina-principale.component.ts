@@ -34,8 +34,8 @@ export class PaginaPrincipaleComponent {
 
   downloadDocument() {
     const link = document.createElement('a');
-    link.href = 'assets/documents/report_ibm-2024.pdf'; // Percorso del file
-    link.download = 'Report_Sostenibilita_IBM.pdf'; // Nome del file da scaricare
+    link.href = 'assets/documents/2024-sustainability-readiness-report.pdf'; //percorso del file
+    link.download = 'Report_Sostenibilita_IBM.pdf'; //nome del file da scaricare
     link.click();
   }
 }
