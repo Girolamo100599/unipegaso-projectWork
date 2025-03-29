@@ -1,15 +1,27 @@
-<header class="header">
+<header class="header" role="banner">
     <div class="container" style="margin-left: 300px;">
         <div class="logo">
-            <img style="width: 140px;" src="assets/icons/ibm_logo_white.svg" alt="IBM Logo" />
+            <img style="width: 140px;" src="assets/icons/ibm_logo_white.svg" alt="IBM Logo" role="img"
+                aria-label="Logo IBM" />
         </div>
 
-        <nav class="nav">
-            <ul>
-                <li><a routerLink="/" class="nav-link">Home</a></li>
-                <li><a (click)="navigate('chi-siamo')" class="nav-link">Chi Siamo</a></li>
-                <li><a routerLink="/report" class="nav-link">Report</a></li>
-                <li><a href="https://www.ibm.com/contact" class="nav-link">Contatti</a></li>
+        <nav class="nav" role="navigation" aria-label="Menu di navigazione principale">
+            <ul role="menubar">
+                <li role="none">
+                    <a routerLink="/" class="nav-link" role="menuitem" aria-label="Vai alla pagina Home">Home</a>
+                </li>
+                <li role="none">
+                    <a (click)="navigate('chi-siamo')" class="nav-link" role="menuitem"
+                        aria-label="Vai alla sezione Chi Siamo">Chi Siamo</a>
+                </li>
+                <li role="none">
+                    <a routerLink="/report" class="nav-link" role="menuitem"
+                        aria-label="Vai alla pagina Report">Report</a>
+                </li>
+                <li role="none">
+                    <a href="https://www.ibm.com/contact" class="nav-link" role="menuitem"
+                        aria-label="Vai alla pagina Contatti IBM">Contatti</a>
+                </li>
             </ul>
         </nav>
     </div>

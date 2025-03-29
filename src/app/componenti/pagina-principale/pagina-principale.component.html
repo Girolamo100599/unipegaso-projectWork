@@ -4,15 +4,18 @@
             <!-- Barra di Ricerca -->
             <div class="search-bar" style="position: relative;">
                 <input type="text" class="search-input" placeholder="Cerca..." [(ngModel)]="searchTerm"
-                    (input)="filterResults()" />
+                    (input)="filterResults()" aria-label="Campo di ricerca" aria-haspopup="listbox"
+                    aria-controls="search-results" />
                 <img style="margin-top: 5px;" src="assets/icons/ricerca.svg" alt="Icona di ricerca">
 
                 <!-- Dropdown con i risultati -->
-                <ul class="dropdown-menu" *ngIf="filteredItems.length > 0 && searchTerm.length > 0"
+                <ul class="dropdown-menu" *ngIf="filteredItems.length > 0 && searchTerm.length > 0" id="search-results"
+                    role="listbox"
                     style="position: absolute; top: 100%; left: 0; background: white; border: 1px solid #ccc; width: 100%; z-index: 1000; list-style: none; padding: 0; margin: 0;">
                     <li *ngFor="let result of filteredItems" (click)="selectItem(result)"
                         style="padding: 10px; cursor: pointer;" (mouseover)="hoverItem = result"
-                        [style.background]="hoverItem === result ? '#f0f0f0' : 'white'">
+                        [style.background]="hoverItem === result ? '#f0f0f0' : 'white'" role="option"
+                        [attr.aria-selected]="hoverItem === result">
                         {{ result }}
                     </li>
                 </ul>
@@ -25,7 +28,7 @@
             </p>
         </div>
 
-        <!-- Le Nostre Aree di Interesse -->
+        <!-- Le Aree di Interesse -->
         <div class="row contenuto mt-5">
             <div class="col-md-6 text-start" style="margin-left: 300px;">
                 <h2>Le Nostre Aree di Interesse</h2>
@@ -39,7 +42,10 @@
 
         <!-- Pulsante Scarica PDF -->
         <div class="button" style="margin-left: 300px; margin-top: 20px;">
-            <div (click)="downloadDocument()" class="nav-link" style="padding: 8%;">Scarica PDF</div>
+            <div (click)="downloadDocument()" class="nav-link" style="padding: 8%;" role="button" tabindex="0"
+                aria-label="Scarica il report in formato PDF">
+                Scarica PDF
+            </div>
         </div>
     </div>
 </div>
